@@ -1,0 +1,49 @@
+{
+    "cat":{
+        "name":"cats",
+        "followers":25000,
+        "following":5,
+        "posts":[
+            {
+                "image":"https://cdn.shopify.com/s/files/1/2668/1922/files/british-shorthair-1.jpg?v=1689089942",
+                "likes":200,
+                "comments":17
+            },
+            {
+                "image":"https://cdn.shopify.com/s/files/1/2668/1922/files/british-shorthair-1.jpg?v=1689089942",
+                "likes":312,
+                "comments":19
+
+            },
+            {
+                "image":"https://cdn.shopify.com/s/files/1/2668/1922/files/british-shorthair-1.jpg?v=1689089942",
+                "likes":1065,
+                "comments":200
+            }
+        ]
+    },
+    "dogs":{
+        "name":"dogs",
+        "followers":7500,
+        "following":150,
+        "post":[
+            {
+                "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwaZnsg_v9VYclSx7oUmhZQiGG3MhvFr1D9Q&s",
+                "likes":300,
+                "comments":17
+            },
+            {
+                "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlT7FfZG-T1KWAU-5mGUnkVmgzlJoyLrmq4Q&s",
+                "likes":800,
+                "comments":198
+            },
+            {
+                "image":"",
+                "likes":500,
+                "comments":197
+            }
+        ]
+    }
+
+
+}
