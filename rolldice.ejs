@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rolldice</title>
 </head>
 <body>
-    <h1>Dice gave value: <%=math.floor(math.random() *6) +1 %></h1>
+    <h1>Dice gave value : <%=diceVal %></h1>
+    <% if(diceVal ==6) { %>
+        <h2>Nice ! Roll dice again</h2>
+        <% } %>
+    
 </body>
 </html>
