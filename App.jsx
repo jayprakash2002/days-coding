@@ -1,14 +1,14 @@
-
-import './App.css'
-import Counter from './Counter';
+import SeachBox from "./SeachBox";
+import "./App.css";
+import InfoBox from "./InfoBox";
 
 function App(){
   return(
-  <>
-  <h1>state in React</h1>
-  <Counter />
-  </>
+    <>
+    <SeachBox  />
+    <InfoBox />
+    </>
   );
-}  
+}
 
 export default App;
