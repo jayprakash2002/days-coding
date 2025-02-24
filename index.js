@@ -1,33 +1,39 @@
-const express =require("express");
-const app =express();
-const path=require("path");
+const mongoose = require('mongoose');
 
 
-const port =3030;
 
-app.set("view engine","ejs");
-app.set("views",path.join(__dirname,"/views"));
+//mongoose.connect('mongodb://127.0.0.1:27017/test');
 
-app.get("/",(req, res)=>{
-    res.render("home.ejs");
+
+main()
+.then ((res) =>{
+    console.log("connection successful");
+})
+    
+    .catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect('mongodb://127.0.0.1:27017/test');
+
+  // 
+}
+const userSchema =new mongoose.Schema({
+    name: String,
+    email:String,
+    age:Number,
 });
-app.get("/ig/:username",(req,res)=>{
-    let { username }= req.params;
-    const instaData=require("./data.json");
-    const data =instaData[username];
-    console.log(data);
-    res.render("instagram.ejs" ,{data });
-    //const followers=["adam","bob","stevn","abc"];
-    //let{username} =req.params;
-    //res.render("instagram.ejs",{ username,followers});
+const User =mongoose.model("User",userSchema);
+
+
+const user2=new User({
+    name: "adam",
+    email:"adam@soo",
+    age:4.8,
 });
-app.get("/hello",(req, res)=>{
-    res.send("hello");
-});
-app.get("/rolldice",(req, res)=>{
-    let diceVal =Math.floor(Math.random() *6) +1;
-    res.render("rolldice.ejs",{diceVal:diceVal });
-});
-app.listen(port,()=>{
-    console.log(`listening on port ${port}`);
-});
+   user2.save()
+   .then((res)=>{
+    console.log(res);
+   })
+   .catch((err)=>{
+    console.log(err);
+   });
