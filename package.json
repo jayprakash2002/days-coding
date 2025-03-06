@@ -1,5 +1,5 @@
 {
-  "name": "mongodb",
+  "name": "celdir",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "mongoose": "^8.10.1"
+    "express": "^4.21.1"
   }
 }

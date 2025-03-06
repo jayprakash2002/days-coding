@@ -1,39 +1,36 @@
-const mongoose = require('mongoose');
+const express =require("express");
+const app=express();
+const port =8080;
+const path =require("path");
+
+app.use(express.urlencoded({ extended :true}));
 
 
+app.set("view engine","ejs");
+app.set("views",path.join(__dirname,"views"));
 
-//mongoose.connect('mongodb://127.0.0.1:27017/test');
-
-
-main()
-.then ((res) =>{
-    console.log("connection successful");
-})
-    
-    .catch(err => console.log(err));
-
-async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/test');
-
-  // 
-}
-const userSchema =new mongoose.Schema({
-    name: String,
-    email:String,
-    age:Number,
+let posts =[
+    {
+        username:"appnacollege",
+        content:"I love codding"
+    },
+    {
+        username:"appnacollege",
+        content:"I love codding"
+    },
+    {
+        username:"appnacollege",
+        content:"I love codding"
+    },
+];
+app.get("/posts",(req,res)=>{
+    res.render("index.ejs",{posts});
 });
-const User =mongoose.model("User",userSchema);
 
+//app.get("/post/new",(req,res)=>{
 
-const user2=new User({
-    name: "adam",
-    email:"adam@soo",
-    age:4.8,
+//});
+
+app.listen(port,() =>{
+    console.log("listing to port :8080");
 });
-   user2.save()
-   .then((res)=>{
-    console.log(res);
-   })
-   .catch((err)=>{
-    console.log(err);
-   });
