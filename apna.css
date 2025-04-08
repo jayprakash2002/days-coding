@@ -1,0 +1,26 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+h3{
+    color: purple;
+}
+h1{
+    color: #b92b27;
+}
+#upvote{
+    color: blue;
+    background-color: #b92b27;
+}
+.Follow{
+    background-color: black;
+}
+div > input{
+    background-color: blueviolet;
+}
+button:hover{
+    background-color: blue;
+    color: black;
+}
+h3:hover{
+    text-decoration: overline;
+}
